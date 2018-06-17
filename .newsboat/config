@@ -1,0 +1,8 @@
+color listnormal white default
+color listfocus red black standout bold
+color listnormal_unread blue default
+color listfocus_unread white red bold
+color info red black bold
+color article blue default
+
+browser firefox
