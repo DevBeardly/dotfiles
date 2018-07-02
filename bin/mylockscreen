@@ -1,0 +1,62 @@
+#!/bin/sh
+
+B='#00000000'  # blank
+Bl='#2424ffff' # blue
+Lb='#1212ddaa' #light blue
+C='#ffffff22'  # clear ish
+D='#ff00ffcc'  # default
+#T='#ee00eeee'  # text
+T='#ffffffff'  # text
+W='#880000bb'  # wrong
+V='#bb00bbbb'  # verifying
+
+letterEnteredColor='#d23c3dff'
+letterRemovedColor='#d23c3dff'
+passwordCorrect='#00000000'
+passwordIncorrect='#d23c3dff'
+background='#00000000'
+foreground='#ffffffff'
+
+/bin/i3lock \
+-i ~/Wallpapers/superbrothers.png -t \
+--insidevercolor=$C   \
+--ringvercolor=$V     \
+\
+--insidewrongcolor=$W \
+--ringwrongcolor=$W  \
+\
+--insidecolor=$B      \
+--ringcolor=$Lb        \
+--linecolor=$T        \
+--separatorcolor=$D   \
+\
+--verifcolor=$T        \
+--wrongcolor=$T        \
+--timecolor=$T        \
+--datecolor=$T        \
+--layoutcolor=$T      \
+--keyhlcolor=$T       \
+--bshlcolor=$T        \
+\
+--line-uses-inside \
+\
+--clock --datestr="Type password to unlock..." --timepos="x+110:h+950" --datepos="x+135:h+975" --noinputtext="" --force-clock $lockargs \
+--indicator --indpos="x+280:h+950" --radius=20 --ring-width=4 --veriftext="" --wrongtext="" \
+--timestr="%H:%M:%S"  \
+#--datestr="%A, %m %Y" \
+#--keylayout 2         \
+\
+
+# sleep 1 adds a small delay to prevent possible race conditions with suspend
+sleep 1
+
+exit 0
+
+# --blur 5
+# --veriftext="Drinking verification can..."
+# --wrongtext="Nope!"
+# --textsize=20
+# --modsize=10
+# --timefont=comic-sans
+# --datefont=monofur
+# etc
